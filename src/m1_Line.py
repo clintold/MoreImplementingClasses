@@ -531,7 +531,11 @@ class Line(object):
         # --------------------------------------------------------------
         p1 = self.start
         p2 = other_line.start
-        return Point(p1.x + p2.x, p1.y + p2.y)
+        p3 = self.end
+        p4 = other_line.end
+        p5 = Point(p1.x + p2.x, p1.y + p2.y)
+        p6 = Point(p3.x + p4.x, p3.y + p4.y)
+        return Line(p5, p6)
 
     def line_minus(self, other_line):
         """
@@ -568,7 +572,11 @@ class Line(object):
         # --------------------------------------------------------------
         p1 = self.start
         p2 = other_line.start
-        return Point(p1.x - p2.x, p1.y - p2.y)
+        p3 = self.end
+        p4 = other_line.end
+        p5 = Point(p1.x - p2.x, p1.y - p2.y)
+        p6 = Point(p3.x - p4.x, p3.y - p4.y)
+        return Line(p5, p6)
 
 
     def midpoint(self):
